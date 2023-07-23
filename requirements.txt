@@ -1,2 +1,2 @@
-ltd-conveyor
+ltd-conveyor<2.0.0
 documenteer[technote]
