@@ -32,6 +32,7 @@ clean:
 	rm -rf $(BUILDDIR)/*
 
 html: jor.csv
+	echo `date` >> index.rst
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	cp jor.csv $(BUILDDIR)/html
 	@echo
