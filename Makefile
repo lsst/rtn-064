@@ -61,7 +61,7 @@ refresh-bib:
 jor.csv:
 	pip install -r operations_milestones/requirements.txt
 	( \
-                source operations_milestones/venv/bin/activate; \
+                . operations_milestones/venv/bin/activate; \
                 python operations_milestones/opsMiles.py -j -q "and filter=23364"  -u ${JIRA_USER} -p ${JIRA_PASSWORD} \
         )
 

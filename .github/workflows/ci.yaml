@@ -26,6 +26,9 @@ jobs:
 
       - name: Build
         shell: bash
+        env:
+          JIRA_USER: ${{ secrets.JIRA_USER }}
+          JIRA_PASSWORD: ${{ secrets.JIRA_PASSWORD }}
         run: |
           sh updateDate.sh
           make html
