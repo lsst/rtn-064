@@ -31,8 +31,9 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 
-html:
+html: jor.csv
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	cp jor.csv $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
@@ -56,3 +57,11 @@ refresh-bib:
 	refresh-lsst-bib -d lsstbib
 	@echo
 	@echo "Commit the new bibliographies: git add lsstbib && git commit -m \"Update bibliographies.\""
+
+jor.csv:
+	pip install -r operations_milestones/requirements.txt
+	( \
+                source operations_milestones/venv/bin/activate; \
+                python operations_milestones/opsMiles.py -j -q "and filter=23364"  -u ${JIRA_USER} -p ${JIRA_PASSWORD} \
+        )
+
