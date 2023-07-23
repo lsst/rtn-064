@@ -1,6 +1,11 @@
 name: CI
 
-'on': [push, pull_request, workflow_dispatch]
+'on':
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron:  '5 * * * *'    # At every 15th minute
 
 jobs:
   build:
@@ -30,11 +35,9 @@ jobs:
           JIRA_USER: ${{ secrets.JIRA_USER }}
           JIRA_PASSWORD: ${{ secrets.JIRA_PASSWORD }}
         run: |
-          sh updateDate.sh
           make html
 
       - name: Upload
-        if: ${{ github.event_name == 'push' }}
         env:
           LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}
           LTD_USERNAME: ${{ secrets.LTD_USERNAME }}
