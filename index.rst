@@ -1,6 +1,3 @@
-:tocdepth: 1
-
-.. sectnum::
 
 .. Metadata such as the title, authors, and description are set in metadata.yaml
 

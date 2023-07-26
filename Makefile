@@ -32,7 +32,6 @@ clean:
 	rm -rf $(BUILDDIR)/*
 
 html: jor.csv
-	echo `date` >> index.rst
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	cp jor.csv $(BUILDDIR)/html
 	@echo
@@ -65,4 +64,5 @@ jor.csv:
                 . operations_milestones/venv/bin/activate; \
                 python operations_milestones/opsMiles.py -j -q "and filter=23364"  -u ${JIRA_USER} -p ${JIRA_PASSWORD} \
         )
+	echo `date` >> index.rst
 

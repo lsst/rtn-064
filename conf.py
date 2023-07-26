@@ -7,3 +7,7 @@ https://documenteer.lsst.io/technotes/configuration.html
 """
 
 from documenteer.conf.technote import *  # noqa: F401, F403
+
+
+html_logo = '_static/rubin_logo.png'
+
