@@ -65,8 +65,4 @@ jor.csv:
                 python operations_milestones/opsMiles.py -j -q "and filter=23364"  -u ${JIRA_USER} -p ${JIRA_PASSWORD} \
         )
 	echo `date` >> index.rst
-	echo ""` >> index.rst
-	echo ".. csv-table:: JOR tickets
-   :header-rows: 1
-   :file: jor.csv" >> index.rst
 
