@@ -34,6 +34,7 @@ clean:
 html: jor.csv
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	cp jor.csv $(BUILDDIR)/html
+	cp _static/rubin_logo_white.png $(BUILDDIR)/html/_static/lsst-logo-dark.svg
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
