@@ -12,15 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Public IP
-        id: ip
-        uses: haythem/public-ip@v1.3
-
-      - name: Print Public IP
-        run: |
-          echo ${{ steps.ip.outputs.ipv4 }}
-          echo ${{ steps.ip.outputs.ipv6 }}
-
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # full history for metadata
@@ -45,6 +36,11 @@ jobs:
         run: |
           (cd operations_milestones; git pull origin main)
           make html
+
+      - name: Public IP
+        if: failure()
+        id: ip
+        uses: haythem/public-ip@v1.3
 
       - name: Upload
         env:
