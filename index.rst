@@ -1,3 +1,11 @@
+##########################
+JOR review recommendations
+##########################
+
+.. abstract::
+
+   Review recommendations extracted from Jira. 
+
 ===================
 JOR recommendations
 ===================
