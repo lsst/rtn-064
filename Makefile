@@ -5,8 +5,8 @@ init:
 
 .PHONY:
 html: jor.csv
-	cp jor.csv _build/html
 	tox run -e html
+	cp jor.csv _build/html
 
 .PHONY:
 lint:
