@@ -4,7 +4,8 @@ init:
 	pre-commit install
 
 .PHONY:
-html:
+html: jor.csv
+	cp jor.csv _build/html
 	tox run -e html
 
 .PHONY:
@@ -24,3 +25,16 @@ clean:
 	rm -rf _build
 	rm -rf .technote
 	rm -rf .tox
+
+
+
+.FORCE:
+
+jor.csv: .FORCE 
+	pip install -r operations_milestones/requirements.txt
+	( \
+                . operations_milestones/venv/bin/activate; \
+                python operations_milestones/opsMiles.py -j -q "and filter=23364"  -u ${JIRA_USER} -p ${JIRA_PASSWORD} \
+        )
+	echo `date` >> index.rst
+

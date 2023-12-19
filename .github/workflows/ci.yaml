@@ -3,6 +3,9 @@ name: CI
 'on': [push, pull_request, workflow_dispatch]
 
 jobs:
+  env:
+     JIRA_USER: ${{ secrets.JIRA_USER }}
+     JIRA_PASSWORD: ${{ secrets.JIRA_PASSWORD }}
   call-workflow:
     uses: lsst-sqre/rubin-sphinx-technote-workflows/.github/workflows/ci.yaml@v1
     with:
