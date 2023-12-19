@@ -1,3 +1,5 @@
+:orphan:
+
 .. image:: https://img.shields.io/badge/rtn--064-lsst.io-brightgreen.svg
    :target: https://rtn-064.lsst.io/
 .. image:: https://github.com/lsst/rtn-064/workflows/CI/badge.svg
@@ -48,3 +50,4 @@ Editing this technical note
 The main content of this technote is in ``index.rst`` (a reStructuredText file).
 Metadata and configuration is in the ``technote.toml`` file.
 For guidance on creating content and information about specifying metadata and configuration, see the Documenteer documentation: https://documenteer.lsst.io/technotes.
+
