@@ -37,4 +37,5 @@ jor.csv: .FORCE
                 python operations_milestones/opsMiles.py -j -q "and filter=23364"  -u ${JIRA_USER} -p ${JIRA_PASSWORD} \
         )
 	echo `date` >> index.rst
+	echo `date` >> jor.csv
 
